@@ -28,6 +28,9 @@ public class Board {
         grid[row][col] = symbol;
         return true;
     }
+    public char[][] getGrid() {
+        return grid;
+    }
     public boolean hasWon(char symbol) {
         for (int i = 0; i < 3; i++) {
             if (grid[i][0] == symbol && grid[i][1] == symbol && grid[i][2] == symbol) {
