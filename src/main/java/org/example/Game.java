@@ -21,7 +21,11 @@ public class Game {
             col = scanner.nextInt();
 
             if (board.placeSymbol(row, col, currentPlayer)) {
-                // nur für US-001 – noch keine Gewinnlogik
+                if (board.hasWon(currentPlayer)) {
+                    board.print();
+                    System.out.println("Spieler " + currentPlayer + " hat gewonnen!");
+                    break;
+                }
                 currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
             } else {
                 System.out.println("Ungültiger Zug. Versuche es erneut.");
